@@ -4,14 +4,27 @@ searchInput.addEventListener('input', (event) => {
     const value = formatString(event.target.value);
 
     const items = document.querySelectorAll('.item');
+    const noResults = document.getElementById('no_results');
+
+    let hasResults = false;
 
     items.forEach((item) => {
-        if (formatString(item.textContent).indexOf(value) !== -1) {
-            item.style.display = 'flex';
-        } else {
-            item.style.display = 'none';
+        // Ignora o item de "No Results" na verificação
+        if (item.id !== 'no_results') {
+            if (formatString(item.textContent).indexOf(value) !== -1) {
+                item.style.display = 'flex';
+                hasResults = true;
+            } else {
+                item.style.display = 'none';
+            }
         }
     });
+
+    if (hasResults) {
+        noResults.style.display = 'none';
+    } else {
+        noResults.style.display = 'flex';
+    }
 });
 
 function formatString(value) {
@@ -21,5 +34,7 @@ function formatString(value) {
 
     return value
         .toLowerCase()
-        .trim();
+        .trim()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
 }
