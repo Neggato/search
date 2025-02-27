@@ -16,35 +16,33 @@ body {
     background: #858585;
 }
 
-input-group {
+.input-group {
     position: relative;
     width: 300px;
     height: 50px;
-    border-radius: 50px;
     background: #f4f4f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    padding: 8px 16px 8px 8px;
+    padding: 8px 16px 8px 40px;
+    /* Ajuste para o ícone */
     border-radius: 24px;
     gap: 8px;
-    align-items: center;
 }
 
-input-icon {
+.input-icon {
     position: absolute;
-    border-radius: 100%;
+    left: 10px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 32px;
-    min-height: 32px;
-    background-color: rgb(43, 116, 226);
+    width: 32px;
+    height: 32px;
+    background-color: rgb(166, 166, 166);
     color: #fff;
-    max-height: 420px;
     font-size: 16px;
-
 }
 
 .input-field {
@@ -56,7 +54,9 @@ input-icon {
     padding-left: 8px;
     color: #333;
     font-size: 16px;
+    outline: none;
 }
+
 
 .input-field::placeholder {
     color: #999;
@@ -96,6 +96,8 @@ input-icon {
 
 .item:hover {
     background-color: #c8c8c8;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .item-image img {
@@ -103,6 +105,7 @@ input-icon {
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .item-image {
@@ -114,12 +117,14 @@ input-icon {
     font-size: 20px;
     font-weight: 700;
     color: #111;
+    padding: 4px 0;
 }
 
 .item-subtitle {
     font-size: 14px;
     color: #6b7280;
     margin-bottom: 4px;
+    padding: 4px 0;
 }
 
 .item-description {
