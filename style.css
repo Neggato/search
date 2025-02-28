@@ -26,9 +26,9 @@ body {
     display: flex;
     align-items: center;
     padding: 8px 16px 8px 40px;
-    /* Ajuste para o ícone */
     border-radius: 24px;
     gap: 8px;
+    margin-bottom: 20px;
 }
 
 .input-icon {
@@ -55,6 +55,7 @@ body {
     color: #333;
     font-size: 16px;
     outline: none;
+    padding-top: 8px;
 }
 
 
